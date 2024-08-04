@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/themes/light_mode.dart';
+import 'package:myapp/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 import 'pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,10 +18,10 @@ class MyApp extends StatelessWidget {
   // ignore: empty_constructor_bodies
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      theme: lightMode,
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
