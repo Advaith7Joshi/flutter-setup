@@ -1,5 +1,10 @@
-# myapp
-A new Flutter project.
+# Flutter Setup
+A new skeleton Flutter project.
+
+## Setup:
+- Light/Dark theme (customizable)
+- Theme Provider implemented
+- Empty Scaffold
 
 ## Getting Started
 
